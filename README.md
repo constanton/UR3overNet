@@ -7,5 +7,7 @@ The other one is for receiving feedback from a sensor (this code is not in the s
 
 The code was made to just work and it's not optimized. It would also be great to have the option for directly controlling UR3 (ie. not with gestures)
 
+More info on my blog: http://blog.antonakoglou.com/controlling-ur3-gestures-network/
+
 ## Credits
 Special thanks to [arvyram](https://github.com/arvyram) and [headamage](https://github.com/headamage) for the Python hints and tips.
