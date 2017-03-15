@@ -35,7 +35,6 @@ def moveto(gesture):
 	global joints_pos
     global th_gesture
         th_gesture = gesture
-        vibrate = False
 	if gesture == "left":
 		move_to = Left
 	elif gesture == "right":
