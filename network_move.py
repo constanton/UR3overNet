@@ -10,7 +10,10 @@ from threading import Thread
 
 JOINT_NAMES = ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint',
                'wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
-
+#BY NO MEANS YOU SHOULD USE THESE NUMBERS!!!
+#PLEASE RECALIBRATE!!!
+#These numbers might damage your device if you don't give it enough space
+#I take no responsibility in case of any damage!
 Center = [-177.31,-121.21,-50.89,-216.94,270.30,15.05]
 Left = [-170.56,-124.29,-51.11,-215.27,278.25,0.5]
 Right = [-176.82,-124.95,-51.09,-214.26,272.90,27.99]
