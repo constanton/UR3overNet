@@ -33,7 +33,7 @@ Back = np.asarray(Back)*pi/180.
 
 def moveto(gesture):
 	global joints_pos
-    global th_gesture
+        global th_gesture
         th_gesture = gesture
 	if gesture == "left":
 		move_to = Left
@@ -53,7 +53,7 @@ def moveto(gesture):
 		return
 	g = FollowJointTrajectoryGoal()
    	g.trajectory = JointTrajectory()
-    g.trajectory.joint_names = JOINT_NAMES
+        g.trajectory.joint_names = JOINT_NAMES
    	try:
            joint_states = rospy.wait_for_message("joint_states", JointState)
      	   joints_pos = joint_states.position
@@ -76,9 +76,9 @@ def send_thread(arg1, stop_event):
     feedback_socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM) # UDP
     prev_gest = th_gesture
     while (not stop_event.is_set()):
-             if th_gesture != prev_gest:
-				#grab a value from somewhere and put it inside msg to...
-				feedback_socket.sendto(msg, ("xxx.xxx.xxx.xxx", 11006))
+        if th_gesture != prev_gest:
+		#grab a value from somewhere and put it inside msg to...
+		feedback_socket.sendto(msg, ("xxx.xxx.xxx.xxx", 11006))
         prev_gest = th_gesture
         time.sleep(0.1)
               
@@ -92,6 +92,7 @@ def main():
 	#initializing feedback thread and stop event
 	thread1_stop = threading.Event()
 	thread1 = Thread(target=send_thread, args=(1, thread1_stop))
+    #we don't want duplicate movements
     prev_gesture = None;
     port = 11005
 	#init socket for communication with UR3
